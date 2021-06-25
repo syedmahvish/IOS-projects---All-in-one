@@ -11,17 +11,43 @@ import XCTest
 
 class CounterTests: XCTestCase {
 
+    var vcTest : ViewController!
+    
+    
     override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        try super.setUp()
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        vcTest = storyboard.instantiateViewController(withIdentifier: String(describing: ViewController.self)) as! ViewController
+        vcTest.loadViewIfNeeded()
     }
 
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        vcTest = nil
+        try super.tearDown()
     }
 
     func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+       testresetButtonTap()
+       testincrementCounter()
+    }
+    
+    func testresetButtonTap() {
+        var barbutton = UIBarButtonItem()
+        vcTest.resetButtonTap(barbutton)
+        if let label  = vcTest.counterLabel,
+            let text = label.text{
+            XCTAssertEqual(text, "0")
+        }
+    }
+    
+    func testincrementCounter(){
+        var button = UIButton()
+        vcTest.counterLabel.text = "1"
+        vcTest.incrementCounter(button)
+        if let label  = vcTest.counterLabel,
+            let text = label.text{
+            XCTAssertEqual(text, "2")
+        }
     }
 
     func testPerformanceExample() {
