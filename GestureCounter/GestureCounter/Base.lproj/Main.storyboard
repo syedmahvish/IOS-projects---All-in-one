@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6cl-3B-6Kc">
+    <device id="retina6_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Counter-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="GestureCounter" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EXa-ig-B2D">
+                                <rect key="frame" x="20" y="108" width="374" height="708"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="40"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0PU-2N-sXr">
+                                <rect key="frame" x="20" y="836" width="374" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="PVd-S7-0sa"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="Tap or Hold"/>
+                                <connections>
+                                    <action selector="incrementCounter:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uNB-v9-RKZ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="0PU-2N-sXr" firstAttribute="top" secondItem="EXa-ig-B2D" secondAttribute="bottom" constant="20" id="542-3T-DpZ"/>
+                            <constraint firstItem="EXa-ig-B2D" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="5xb-6X-L9M"/>
+                            <constraint firstItem="EXa-ig-B2D" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="UuI-eU-bgj"/>
+                            <constraint firstItem="EXa-ig-B2D" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="h1c-Ll-7kc"/>
+                            <constraint firstAttribute="trailing" secondItem="0PU-2N-sXr" secondAttribute="trailing" constant="20" id="huY-En-Ga1"/>
+                            <constraint firstItem="0PU-2N-sXr" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="lkf-Dh-NQR"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="EXa-ig-B2D" secondAttribute="trailing" constant="20" id="qML-Vp-Yo6"/>
+                            <constraint firstAttribute="bottom" secondItem="0PU-2N-sXr" secondAttribute="bottom" constant="20" id="wmT-EH-W2g"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Counter" id="7L4-ZR-Wmp">
+                        <barButtonItem key="leftBarButtonItem" title="Reset" id="ooM-cI-sNX">
+                            <connections>
+                                <action selector="resetCounter:" destination="BYZ-38-t0r" id="7l4-1O-coe"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="counterButton" destination="0PU-2N-sXr" id="AiE-LU-DAG"/>
+                        <outlet property="counterLabel" destination="EXa-ig-B2D" id="OpC-YJ-SuW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="939" y="-551"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Ic2-l5-sWt">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="6cl-3B-6Kc" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Tf6-lk-1Ru">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Qvv-Id-lhh"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YDV-6a-Jbc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="111.59420289855073" y="-557.14285714285711"/>
+        </scene>
+    </scenes>
+</document>
